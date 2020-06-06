@@ -12,6 +12,7 @@ A set of tools to help with cryptography challenges
 #### utilities
 
 - imports Crypto.Util.number
+- imports hexlify and unhexlify from binascii
 - least common multiple (LCM)
 - repeated XOR (repXor)
 - xor (xor)
