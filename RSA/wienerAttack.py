@@ -58,6 +58,13 @@ def is_perfect_square(n):
 
     return -1
 
+"""
+name: wiener_attack
+description: performs wiener's attack for large e values
+arguments: n, e
+returns: d, p, q
+"""
+
 def wiener_attack(n, e):
     sys.setrecursionlimit(100000)
     frac = rational_to_contfrac(e, n)

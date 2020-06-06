@@ -6,7 +6,8 @@ A set of tools to help with cryptography challenges
 ### attacks
 
 #### RSA
-- wiener's attack - may work when the e is very small or very large
+- wiener's attack (wiener_attack) - may work when the e is very small or very large
+- recover prime factors (recover_prime_factors) - recovers p and q when given n, e, and d
 
 ### utilities
 
