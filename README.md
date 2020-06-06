@@ -11,4 +11,6 @@ A set of tools to help with cryptography challenges
 ### utilities
 
 - imports Crypto.Util.number
-- LCM
+- least common multiple (LCM)
+- repeated XOR (repXor)
+- xor (xor)
