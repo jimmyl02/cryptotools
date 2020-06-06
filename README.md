@@ -9,9 +9,12 @@ A set of tools to help with cryptography challenges
 - wiener's attack (wiener_attack) - may work when the e is very small or very large
 - recover prime factors (recover_prime_factors) - recovers p and q when given n, e, and d
 
-### utilities
+#### utilities
 
 - imports Crypto.Util.number
 - least common multiple (LCM)
 - repeated XOR (repXor)
 - xor (xor)
+
+#### todo
+- implement copersmith's attack
