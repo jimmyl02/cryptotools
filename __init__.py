@@ -1,2 +1,2 @@
-from utilities import *
-import RSA
+from .utilities import *
+from . import RSA

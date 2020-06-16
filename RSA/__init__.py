@@ -1,2 +1,2 @@
-from wienerAttack import *
-from recoverPrimeFactors import *
+from .wienerAttack import *
+from .recoverPrimeFactors import *
