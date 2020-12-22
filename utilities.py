@@ -18,7 +18,7 @@ def repXor(inStr, key):
 
         pos = (pos + 1) % len(keyByteArr)
 
-    return output
+    return bytes(output)
 
 """
 name: xor
@@ -41,7 +41,7 @@ def xor(*inStrs):
         for j in range(0, len(inStrs[i])):
             output[j] = output[j] ^ inStrByteArr[j]
 
-    return output
+    return bytes(output)
 
 """
 name: LCM
@@ -52,3 +52,19 @@ returns: integer
 
 def LCM(a, b):
     return abs(a*b) // GCD(a, b)
+
+"""
+name: eGCD
+description: extended gcd; solves a*v + b*v = gcd(a, b)
+arguments: integer, integer (a, b)
+returns integer, integer, integer (gcd, u, v)
+"""
+
+def eGCD(a, b):
+    x, y, u, v = 0, 1, 1, 0
+    while a != 0:
+        q, r = b // a, b % a
+        m, n = x - u*q, y - v*q
+        b, a, x, y, u, v = a, r, u, v, m, n
+    gcd = b
+    return gcd, x, y
