@@ -24,7 +24,7 @@ def repXor(inStr, key):
 name: xor
 description: xors all strings given as arguments
 arguments: *string:bytearray
-returns bytearray with the xored data
+returns: bytearray with the xored data
 """
 
 def xor(*inStrs):
@@ -46,7 +46,7 @@ def xor(*inStrs):
 """
 name: LCM
 description: returns the least common multiple
-arguments: integer, integer
+arguments: a:integer, b:integer
 returns: integer
 """
 
@@ -55,9 +55,9 @@ def LCM(a, b):
 
 """
 name: eGCD
-description: extended gcd; solves a*v + b*v = gcd(a, b)
-arguments: integer, integer (a, b)
-returns integer, integer, integer (gcd, u, v)
+description: extended gcd; solves a*u + b*v = gcd(a, b)
+arguments: a:integer, b:integer
+returns: integer, integer, integer (gcd, u, v)
 """
 
 def eGCD(a, b):
@@ -68,3 +68,40 @@ def eGCD(a, b):
         b, a, x, y, u, v = a, r, u, v, m, n
     gcd = b
     return gcd, x, y
+
+
+"""
+name: legendre
+description: legendre symbol calculation (a/p)=a^((p-1)/2) mod p
+arguemnts: a:integer, p:integer
+returns: integer [1: a is quadratic residue, -1: a is quadratic non-residue, 0: a % p == 0]
+"""
+def legendre(a, p):
+    return pow(a,(p-1)//2,p)
+
+"""
+name: crt
+description: chinese remainder theorem
+arguments: a:[integer], n:[integer]; follows x=a mod n where n_i must be coprime
+returns: integer which is solution to system of congruences
+"""
+
+def crt(a, n):
+    N = n[0]
+    for i in range(1, len(n)):
+        N *= n[i]
+    y = []
+    for i in range(len(n)):
+        y.append(N // n[i])
+    z = []
+    for i in range(len(n)):
+        # calculate y_i^-1 using eGCD as y_i*y_i^-1+n*m=1 because y_i*y_i^-1 minus any multiple of n should be 1
+        res = eGCD(y[i], n[i])
+        if(res[0] != 1):
+            print('[!] Warning: There is some n_i that is not coprime')
+        z.append(res[1])
+    ans = 0
+    for i in range(len(n)):
+        ans += a[i]*y[i]*z[i]
+    return ans % N
+
