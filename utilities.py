@@ -76,6 +76,7 @@ description: legendre symbol calculation (a/p)=a^((p-1)/2) mod p
 arguemnts: a:integer, p:integer
 returns: integer [1: a is quadratic residue, -1: a is quadratic non-residue, 0: a % p == 0]
 """
+
 def legendre(a, p):
     return pow(a,(p-1)//2,p)
 
@@ -104,4 +105,3 @@ def crt(a, n):
     for i in range(len(n)):
         ans += a[i]*y[i]*z[i]
     return ans % N
-
