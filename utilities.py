@@ -85,6 +85,7 @@ name: crt
 description: chinese remainder theorem
 arguments: a:[integer], n:[integer]; follows x=a mod n where n_i must be coprime
 returns: integer which is solution to system of congruences
+note: algorithm explanation here https://brilliant.org/wiki/chinese-remainder-theorem/
 """
 
 def crt(a, n):
