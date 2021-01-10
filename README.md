@@ -1,5 +1,5 @@
 # cryptotools
-A set of tools to help with cryptography challenges
+A set of tools to help with cryptography challenges. View full documentation [here](https://cryptotools.jimmyli.us/).
 
 Some functions require sage and will silently not import if sage is not detected. Additionally, the functions writen in sage will be prefixed with sage_*. They must be preparsed with `sage --preparse {filename}` then moved from `{filename}.sage.py` to `{filename}.py`. Hopefully there will be a script soon to do this automatically 
 
