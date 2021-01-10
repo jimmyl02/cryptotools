@@ -1,0 +1,32 @@
+site_name: cryptotools
+site_description: cryptotools documentation
+site_author: jimmyl02
+site_url: https://cryptotools.jimmyli.us
+
+nav:
+    - Home: index.md
+    - Utilities: utilities.md
+    - RSA:
+        - Attacks: RSA/attacks.md
+        - Utilities: RSA/utilities.md
+    - Lattice:
+        - Utilities: lattice/utilities.md
+
+docs_dir: content
+
+theme:
+    name: material
+    language: en
+    features:
+        - instant
+    palette:
+        scheme: slate
+        primary: blue
+        accent: blue
+
+plugins:
+    - search
+
+markdown_extensions:
+    - pymdownx.highlight
+    - pymdownx.superfences
